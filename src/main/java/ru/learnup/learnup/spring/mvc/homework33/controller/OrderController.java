@@ -36,9 +36,7 @@ public class OrderController {
                 .map(orderMapper::mapToView)
                 .collect(Collectors.toList());
 
-        Flux<OrderView> orders = Flux.fromIterable(orderViews);
-
-        return orders;
+        return Flux.fromIterable(orderViews);
     }
 
     @GetMapping("/{orderId}")
